@@ -1,0 +1,11 @@
+namespace: kustomize-dev 
+resources:
+- ../../base
+patchesStrategicMerge:
+ - deployment.yaml
+commonLabels:
+  env: dev
+configMapGenerator:
+- name: env-config
+  files:
+  - config.env 

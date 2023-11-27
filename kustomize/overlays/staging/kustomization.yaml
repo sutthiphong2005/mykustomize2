@@ -1,0 +1,11 @@
+namespace: kustomize-staging
+resources:
+- ../../base
+patchesStrategicMerge:
+ - deployment.yaml
+commonLabels:
+  env: staging
+configMapGenerator:
+- name: env-config
+  files:
+  - config.env

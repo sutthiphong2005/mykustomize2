@@ -1,0 +1,11 @@
+namespace: kustomize-prod
+resources:
+- ../../base
+patchesStrategicMerge:
+ - deployment.yaml
+commonLabels:
+  env: production
+configMapGenerator:
+- name: env-config
+  files:
+  - config.env 
